@@ -1,0 +1,43 @@
+<article class="blog" data-page="blog">
+
+  <header>
+    <h2 class="h2 article-title">Blog</h2>
+  </header>
+
+  <section class="blog-posts">
+
+    <ul class="blog-posts-list">
+      {% for blog in site.data.blogs %}
+      <li class="blog-post-item">
+        <a href="{{ blog.link }}" target="_blank">
+
+          <figure class="blog-banner-box">
+            <img src="{{ blog.image }}" alt="{{ blog.alt }}" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <div class="blog-meta">
+              <p class="blog-category">{{ blog.category }}</p>
+
+              <span class="dot"></span>
+
+              <time datetime="{{ blog.datetime }}">{{ blog.date }}</time>
+            </div>
+            
+            <h3 class="h3 blog-item-title">{{ blog.title }}</h3>
+
+            <p class="blog-text">
+              {{ blog.summary }}
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </section>
+
+</article>

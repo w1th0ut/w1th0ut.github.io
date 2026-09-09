@@ -1,0 +1,11 @@
+- name: "Penetration testing"
+  value: 90
+
+- name: "Website development"
+  value: 70
+
+- name: "Web design"
+  value: 40
+
+- name: "Android app Development"
+  value: 60

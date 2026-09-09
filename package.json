@@ -1,0 +1,27 @@
+{
+  "name": "w1th0ut.github.io",
+  "version": "1.0.0",
+  "description": "Design by https://github.com/codewithsadee/vcard-personal-portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node scripts/serve.js",
+    "build": "node scripts/build.js",
+    "start": "node scripts/serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w1th0ut/w1th0ut.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/w1th0ut/w1th0ut.github.io/issues"
+  },
+  "homepage": "https://github.com/w1th0ut/w1th0ut.github.io#readme",
+  "devDependencies": {
+    "js-yaml": "^5.4.1",
+    "liquidjs": "^10.29.0"
+  }
+}

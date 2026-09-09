@@ -1,1 +1,9 @@
+title: "Bagas Rizki Gunardi"
+description: "Security Analyst & Fullstack Engineer Portfolio"
 include: [".well-known"]
+exclude:
+  - "node_modules"
+  - "package.json"
+  - "package-lock.json"
+  - "scripts"
+  - "README.md"
