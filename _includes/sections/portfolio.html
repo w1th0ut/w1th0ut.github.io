@@ -38,11 +38,11 @@
 
     <ul class="project-list">
       {% for item in site.data.projects.items %}
-      <li class="project-item  active" data-filter-item data-category="{{ item.category_slug }}">
-        <a href="{{ item.link }}" target="_blank">
+      <li class="project-item  active" data-filter-item data-category="{{ item.category_slug }}" data-project-item>
+        <div class="project-card-trigger" data-project-trigger>
 
           <figure class="project-img">
-            <div class="project-item-icon-box">
+            <div class="project-item-icon-box" title="View details">
               <ion-icon name="eye-outline"></ion-icon>
             </div>
 
@@ -53,11 +53,61 @@
 
           <p class="project-category">{{ item.category }}</p>
 
-        </a>
+        </div>
+
+        <!-- Hidden modal data payload -->
+        <div class="project-modal-payload" style="display: none;">
+          <span data-payload-title>{{ item.title }}</span>
+          <span data-payload-category>{{ item.category }}</span>
+          <span data-payload-image>{{ item.image }}</span>
+          <span data-payload-alt>{{ item.alt }}</span>
+          <span data-payload-desc>{{ item.description }}</span>
+          {% if item.github %}
+          <span data-payload-github="{{ item.github }}"></span>
+          {% endif %}
+          {% if item.web %}
+          <span data-payload-web="{{ item.web }}"></span>
+          {% endif %}
+          {% if item.npm %}
+          <span data-payload-npm="{{ item.npm }}"></span>
+          {% endif %}
+          {% if item.link %}
+          <span data-payload-link="{{ item.link }}"></span>
+          {% endif %}
+        </div>
       </li>
       {% endfor %}
     </ul>
 
   </section>
+
+  <!-- Project Detail Modal -->
+  <div class="project-modal-container" data-project-modal-container>
+
+    <div class="project-modal-overlay" data-project-modal-overlay></div>
+
+    <div class="project-modal-box">
+
+      <button class="modal-close-btn" data-project-modal-close aria-label="Close modal">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="project-modal-banner">
+        <img src="" alt="" data-project-modal-img>
+      </div>
+
+      <div class="project-modal-details">
+        <span class="project-modal-badge" data-project-modal-category></span>
+        <h3 class="h3 project-modal-title" data-project-modal-title></h3>
+        <p class="project-modal-text" data-project-modal-desc></p>
+
+        <div class="project-modal-actions" data-project-modal-actions>
+          <!-- Dynamic action buttons populated by JavaScript -->
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 
 </article>

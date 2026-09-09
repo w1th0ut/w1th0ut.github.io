@@ -157,3 +157,109 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+// project detail modal variables
+const projectItems = document.querySelectorAll("[data-project-item]");
+const projectModalContainer = document.querySelector("[data-project-modal-container]");
+const projectModalOverlay = document.querySelector("[data-project-modal-overlay]");
+const projectModalCloseBtn = document.querySelector("[data-project-modal-close]");
+
+const projectModalImg = document.querySelector("[data-project-modal-img]");
+const projectModalTitle = document.querySelector("[data-project-modal-title]");
+const projectModalCategory = document.querySelector("[data-project-modal-category]");
+const projectModalDesc = document.querySelector("[data-project-modal-desc]");
+const projectModalActions = document.querySelector("[data-project-modal-actions]");
+
+const toggleProjectModal = function () {
+  if (projectModalContainer) {
+    projectModalContainer.classList.toggle("active");
+  }
+};
+
+if (projectItems.length > 0 && projectModalContainer) {
+  for (let i = 0; i < projectItems.length; i++) {
+    const trigger = projectItems[i].querySelector("[data-project-trigger]");
+    if (!trigger) continue;
+
+    trigger.addEventListener("click", function () {
+      const payload = projectItems[i].querySelector(".project-modal-payload");
+      if (!payload) return;
+
+      const titleEl = payload.querySelector("[data-payload-title]");
+      const catEl = payload.querySelector("[data-payload-category]");
+      const imgEl = payload.querySelector("[data-payload-image]");
+      const altEl = payload.querySelector("[data-payload-alt]");
+      const descEl = payload.querySelector("[data-payload-desc]");
+
+      const githubEl = payload.querySelector("[data-payload-github]");
+      const webEl = payload.querySelector("[data-payload-web]");
+      const npmEl = payload.querySelector("[data-payload-npm]");
+      const linkEl = payload.querySelector("[data-payload-link]");
+
+      if (projectModalImg) {
+        projectModalImg.src = imgEl ? imgEl.innerText.trim() : "";
+        projectModalImg.alt = altEl ? altEl.innerText.trim() : "";
+      }
+      if (projectModalTitle) projectModalTitle.innerText = titleEl ? titleEl.innerText.trim() : "";
+      if (projectModalCategory) projectModalCategory.innerText = catEl ? catEl.innerText.trim() : "";
+      if (projectModalDesc) projectModalDesc.innerText = descEl ? descEl.innerText.trim() : "";
+
+      if (projectModalActions) {
+        projectModalActions.innerHTML = "";
+
+        if (webEl && webEl.dataset.payloadWeb) {
+          const webBtn = document.createElement("a");
+          webBtn.href = webEl.dataset.payloadWeb;
+          webBtn.target = "_blank";
+          webBtn.rel = "noopener noreferrer";
+          webBtn.className = "project-modal-btn primary";
+          webBtn.innerHTML = '<ion-icon name="globe-outline"></ion-icon><span>Live Demo / Web</span>';
+          projectModalActions.appendChild(webBtn);
+        }
+
+        if (githubEl && githubEl.dataset.payloadGithub) {
+          const ghBtn = document.createElement("a");
+          ghBtn.href = githubEl.dataset.payloadGithub;
+          ghBtn.target = "_blank";
+          ghBtn.rel = "noopener noreferrer";
+          ghBtn.className = "project-modal-btn secondary";
+          ghBtn.innerHTML = '<ion-icon name="logo-github"></ion-icon><span>GitHub Repo</span>';
+          projectModalActions.appendChild(ghBtn);
+        }
+
+        if (npmEl && npmEl.dataset.payloadNpm) {
+          const npmBtn = document.createElement("a");
+          npmBtn.href = npmEl.dataset.payloadNpm;
+          npmBtn.target = "_blank";
+          npmBtn.rel = "noopener noreferrer";
+          npmBtn.className = "project-modal-btn secondary";
+          npmBtn.innerHTML = '<ion-icon name="cube-outline"></ion-icon><span>NPM Package</span>';
+          projectModalActions.appendChild(npmBtn);
+        }
+
+        if (!webEl && !githubEl && linkEl && linkEl.dataset.payloadLink) {
+          const linkBtn = document.createElement("a");
+          linkBtn.href = linkEl.dataset.payloadLink;
+          linkBtn.target = "_blank";
+          linkBtn.rel = "noopener noreferrer";
+          linkBtn.className = "project-modal-btn primary";
+          linkBtn.innerHTML = '<ion-icon name="open-outline"></ion-icon><span>View Project</span>';
+          projectModalActions.appendChild(linkBtn);
+        }
+      }
+
+      toggleProjectModal();
+    });
+  }
+
+  if (projectModalCloseBtn) projectModalCloseBtn.addEventListener("click", toggleProjectModal);
+  if (projectModalOverlay) projectModalOverlay.addEventListener("click", toggleProjectModal);
+
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && projectModalContainer.classList.contains("active")) {
+      toggleProjectModal();
+    }
+  });
+}
