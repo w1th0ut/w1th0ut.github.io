@@ -21,8 +21,8 @@ items:
     alt: "Tethra Trade DEX"
     description: "High-performance decentralized exchange protocol on Sui Network. One tap, zero pop-up delays, instant fills, and optimized swap routes."
     github: "https://github.com/Tethra-dex"
-    web: "https://www.tethra.trade/trade"
-    link: "https://www.tethra.trade/trade"
+    web: "https://www.tethra.trade"
+    link: "https://www.tethra.trade"
 
   - title: "Nova Radar"
     category: "Web3 & DeFi"
