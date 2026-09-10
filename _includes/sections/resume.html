@@ -8,7 +8,7 @@
 
     <div class="title-wrapper">
       <div class="icon-box">
-        <ion-icon name="book-outline"></ion-icon>
+        <ion-icon name="school-outline"></ion-icon>
       </div>
 
       <h3 class="h3">Education</h3>
@@ -36,7 +36,7 @@
 
     <div class="title-wrapper">
       <div class="icon-box">
-        <ion-icon name="book-outline"></ion-icon>
+        <ion-icon name="briefcase-outline"></ion-icon>
       </div>
 
       <h3 class="h3">Experience</h3>
@@ -67,7 +67,7 @@
         <ion-icon name="trophy-outline"></ion-icon>
       </div>
 
-      <h3 class="h3">Honors &amp; Awards</h3>
+      <h3 class="h3">Honor &amp; Award</h3>
     </div>
 
     <ol class="timeline-list">
@@ -84,6 +84,39 @@
 
       </li>
       {% endfor %}
+    </ol>
+
+  </section>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="document-text-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Publication</h3>
+    </div>
+
+    <ol class="timeline-list">
+      {% for pub in site.data.publications %}
+      <li class="timeline-item">
+
+        <h4 class="h4 timeline-item-title">{{ pub.title }}</h4>
+
+        <span>{{ pub.venue }} &middot; {{ pub.date }}</span>
+
+        <p class="timeline-text">
+          {{ pub.description }}
+        </p>
+
+      </li>
+      {% endfor %}
+      {% if site.data.publications == nil or site.data.publications.size == 0 %}
+      <li class="timeline-item">
+        <p class="timeline-text" style="color: var(--light-gray); font-style: italic;">Publications will be listed here soon.</p>
+      </li>
+      {% endif %}
     </ol>
 
   </section>

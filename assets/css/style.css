@@ -1224,7 +1224,7 @@ main {
 
 .blog-banner-box {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -1232,7 +1232,8 @@ main {
 .blog-banner-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--eerie-black-1);
   transition: var(--transition-1);
 }
 
@@ -1409,7 +1410,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #PORTFOLIO, BLOG 
    */
 
-  .blog-banner-box { height: auto; }
+  /* .blog-banner-box height handled by aspect-ratio */
 
 }
 
@@ -1913,7 +1914,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * BLOG
    */
 
-  .blog-banner-box { height: 230px; }
+  /* .blog-banner-box height handled by aspect-ratio */
 
 }
 
@@ -2040,4 +2041,37 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+/*-----------------------------------*\
+  #CERTIFICATE COMING SOON
+\*-----------------------------------*/
+
+.coming-soon-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.coming-soon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--light-gray);
+  text-align: center;
+}
+
+.coming-soon-box ion-icon {
+  font-size: 56px;
+  color: var(--orange-yellow-crayola);
+}
+
+.coming-soon-box .h3 {
+  color: var(--white-2);
+}
+
+.coming-soon-box p {
+  font-size: var(--fs-6);
+  color: var(--light-gray);
 }
