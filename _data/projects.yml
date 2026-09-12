@@ -318,5 +318,15 @@ items:
     web: "https://permata-tex.com/"
     link: "https://permata-tex.com/"
 
+  - title: "Laocoön and His Sons"
+    category: "Web Apps"
+    category_slug: "web apps"
+    image: "./assets/images/projects/laocoon.png"
+    alt: "Laocoön and His Sons 3D Scrollytelling"
+    description: "An immersive editorial 3D scrollytelling web experience exploring the tragic Hellenistic masterpiece 'Laocoön and His Sons'."
+    web: "https://laocoon-design.vercel.app/"
+    link: "https://laocoon-design.vercel.app/"
+
+
 
 
