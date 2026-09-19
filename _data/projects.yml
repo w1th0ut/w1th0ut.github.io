@@ -35,16 +35,6 @@ items:
     github: "https://github.com/w1th0ut/nova-radar"
     link: "https://github.com/w1th0ut/nova-radar"
 
-  - title: "Axis Predict"
-    category: "Web3 & DeFi"
-    category_slug: "web3 & defi"
-    image: "./assets/images/projects/axis-predict.png"
-    alt: "Axis Predict Option Vault"
-    description: "Autonomous DeFAI Option Vault protocol on Sui Network. Features algorithmic options underwriting and automated hedging strategies."
-    github: "https://github.com/w1th0ut/axis-predict"
-    web: "https://axis-predict.vercel.app/"
-    link: "https://axis-predict.vercel.app/"
-
   - title: "Verifund"
     category: "Web3 & DeFi"
     category_slug: "web3 & defi"
@@ -106,6 +96,16 @@ items:
     link: "https://null-losses.vercel.app/"
 
   # DeFAI & Agents
+  - title: "Axis Predict"
+    category: "DeFAI & Agents"
+    category_slug: "defai & agents"
+    image: "./assets/images/projects/axis-predict.png"
+    alt: "Axis Predict Option Vault"
+    description: "Autonomous DeFAI Option Vault protocol on Sui Network. Features algorithmic options underwriting and automated hedging strategies."
+    github: "https://github.com/w1th0ut/axis-predict"
+    web: "https://axis-predict.vercel.app/"
+    link: "https://axis-predict.vercel.app/"
+
   - title: "AetherNet"
     category: "DeFAI & Agents"
     category_slug: "defai & agents"
